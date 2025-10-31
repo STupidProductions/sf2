@@ -484,10 +484,6 @@ FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 *.code-workspace
 
 # Local History for Visual Studio Code
@@ -502,3 +498,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# SF2 Mod
+sf2_win64.exe
+*.nav
+*.bsp
+*.ain
+GameState.txt
+stats.txt
+voice_ban.dt
