@@ -84,5 +84,15 @@
 			"effect_type"			"positive"
 			"stored_as_integer"		"0"
 		}
+		"5002" // See tf_hud_account.cpp (278) and tf_player_shared.cpp (14687)
+		{
+			"name"					"sf2 show metal hud element"
+			"attribute_class"		"sf2_show_metal_hud_element"
+			"description_string"	"unused"
+			"description_format"	"value_is_additive"
+			"hidden"				"1"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"0"
+		}
 	}
 }

@@ -359,6 +359,7 @@ public:
 	C_TFItem		*GetItem( void ) const;
 	bool			HasTheFlag( ETFFlagType exceptionTypes[] = NULL, int nNumExceptions = 0 ) const;
 	virtual bool	IsAllowedToPickUpFlag( void ) const;
+	virtual bool	IsAllowedToSeeMetal (void ) const; // Does this constitute the label "hack"?
 	float			GetCritMult( void ) { return m_Shared.GetCritMult(); }
 
 	virtual void	ItemPostFrame( void );

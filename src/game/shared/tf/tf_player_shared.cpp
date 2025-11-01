@@ -14678,3 +14678,20 @@ bool CTFPlayer::IsHelpmeButtonPressed() const
 	return m_flHelpmeButtonPressTime != 0.f;
 }
 
+
+// SF2 stuff added down here because... I don't want to figure out what the HELL is going on up there.
+
+//-----------------------------------------------------------------------------
+// Purpose: Determine whether player should be able to see metal counter or not
+//-----------------------------------------------------------------------------
+bool CTFPlayer::IsAllowedToSeeMetal( void ) const
+{
+	int iShowMetalHudElement = 0;
+	CALL_ATTRIB_HOOK_INT( iShowMetalHudElement, sf2_show_metal_hud_element );
+	if ( iShowMetalHudElement )
+	{
+		return true;
+	}
+
+	return false;
+}

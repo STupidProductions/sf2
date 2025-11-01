@@ -273,8 +273,9 @@ public:
 
 	virtual bool ShouldDraw( void ) OVERRIDE
 	{
+		// This function controls whether or not metal counter shows up.
 		C_TFPlayer *pPlayer = C_TFPlayer::GetLocalTFPlayer();
-		if ( !pPlayer || !pPlayer->IsAlive() || !pPlayer->IsPlayerClass( TF_CLASS_ENGINEER ) )
+		if ( !pPlayer || !pPlayer->IsAlive() || !pPlayer->IsPlayerClass( TF_CLASS_ENGINEER ) && !pPlayer->IsAllowedToSeeMetal() )
 		{
 			m_AccountDeltaItems.RemoveAll();
 			return false;
