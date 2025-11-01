@@ -447,7 +447,7 @@ public:
 	void CreateFeignDeathRagdoll( const CTakeDamageInfo& info, bool bGib, bool bBurning, bool bDisguised );
 
 	// Dropping Ammo
-	bool ShouldDropAmmoPack( void );
+	bool ShouldDropAmmoPack( const CTakeDamageInfo& info ); // Used to have void as param, now has CTakeDamageInfo as a param for checking if attacker has sf2_siphon_ammo_pack
 	void DropAmmoPack( const CTakeDamageInfo &info, bool bEmpty, bool bDisguisedWeapon );
 	void DropAmmoPackFromProjectile( CBaseEntity *pProjectile );
 	void DropExtraAmmo( const CTakeDamageInfo& info, bool bFromDeath = false );

@@ -286,6 +286,14 @@ void CTFKnife::PrimaryAttack( void )
 			pPlayer->m_Shared.HealthKitPickupEffects( iDeltaHealth );
 		}
 	}
+
+	// If we get to fully refill our cloak when we get a backstab.
+	int iFillCloakOnBackstab = 0;
+	CALL_ATTRIB_HOOK_INT( iFillCloakOnBackstab, sf2_fill_cloak_on_backstab );
+	if ( bSuccessfulBackstab && iFillCloakOnBackstab )
+	{
+		pPlayer->m_Shared.SetSpyCloakMeter( 100.0f );
+	}
 #endif // GAME_DLL
 }
 

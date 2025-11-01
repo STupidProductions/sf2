@@ -12155,7 +12155,7 @@ void CTFPlayer::Event_Killed( const CTakeDamageInfo &info )
 
 	// Drop a pack with their leftover ammo
 	// Arena: Only do this if the match hasn't started yet.
-	if ( ShouldDropAmmoPack() )
+	if ( ShouldDropAmmoPack( info ) )
 	{
 		DropAmmoPack( info, false, false );
 	}
@@ -13009,12 +13009,23 @@ void CTFPlayer::AmmoPackCleanUp( void )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-bool CTFPlayer::ShouldDropAmmoPack()
+bool CTFPlayer::ShouldDropAmmoPack( const CTakeDamageInfo& info )
 {
 	if ( TFGameRules()->IsMannVsMachineMode() && IsBot() )
 		return false;
 
 	if ( TFGameRules()->IsInArenaMode() && TFGameRules()->InStalemate() == false )
+		return false;
+
+	// There might be a better way to do this, but I'm not exactly smart. I'm just
+	// throwing things together and hoping it works. In this case: trying to make
+	// a custom attribute that stops ammo packs from dropping.
+	int iSiphonAmmoPack = 0;
+	if ( info.GetWeapon() )
+	{
+		CALL_ATTRIB_HOOK_INT_ON_OTHER( info.GetWeapon(), iSiphonAmmoPack, sf2_siphon_ammo_pack)
+	}
+	if ( iSiphonAmmoPack )
 		return false;
 
 	return true;
@@ -15737,7 +15748,7 @@ void CTFPlayer::FeignDeath( const CTakeDamageInfo& info, bool bDeathnotice )
 	}
 
 	// Drop an empty ammo pack!
-	if ( ShouldDropAmmoPack() )
+	if ( ShouldDropAmmoPack( info ) )
 	{
 		DropAmmoPack( info, true /*Empty*/, bDisguised );
 	}
