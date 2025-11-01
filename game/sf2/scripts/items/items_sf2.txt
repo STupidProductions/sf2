@@ -1,0 +1,73 @@
+#base items_game.txt
+
+"items_game"
+{
+	"prefabs"
+	{
+		// Overriding my shit
+		"weapon_winger_pistol"
+		{
+			"used_by_classes"
+			{
+				"scout" "1"
+				"engineer" "1"
+			}
+		}
+		"weapon_russian_riot"
+		{
+			"used_by_classes"
+			{
+				"pyro" "secondary"
+				"soldier" "secondary"
+				"heavy" "secondary"
+				"engineer" "primary"
+			}
+		}
+	}
+	"items"
+	{
+		// Custom Itmes
+		// This is just for testing that I setup custom weapons correctly :)
+		"21000"
+		{
+			"name"				"Dell's Wrath"
+			"sf2_item"			"1"
+			"prefab"			"weapon_wrench"
+			"item_name"			"#TF_DellsWrath"
+			"item_description"	"#TF_DellsWrathDesc"
+			"item_logname"		"DellsWrath"
+			"item_quality"		"developer"
+			"min_ilevel"	"100"
+			"max_ilevel"	"100"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_jag/c_jag"
+			"model_player"	"models/workshop/weapons/c_models/c_jag/c_jag.mdl"
+			"attributes"
+			{
+				"mod wrench builds minisentry"
+				{
+					"attribute_class" 	"wrench_builds_minisentry"
+					"value"				"1"
+				}
+				"Construction rate increased"
+				{
+					"attribute_class"	"mult_construction_value"
+					"value"				"2.0"
+				}
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.5"
+				}
+			}
+		}
+		// Overriding my shit
+		"773" // Pretty Boy's Pocket Pistol
+		{
+			"used_by_classes"
+			{
+				"scout" "1"
+				"engineer" "1"
+			}
+		}
+	}
+}

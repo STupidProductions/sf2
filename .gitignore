@@ -507,3 +507,13 @@ sf2_win64.exe
 GameState.txt
 stats.txt
 voice_ban.dt
+tf2_playerstats.dmx
+ServerConfig.vdf
+game/sf2/media/
+game/sf2/downloadlists/
+game/sf2/cfg/
+game/sf2/custom/**
+# I don't get .gitignore... if I don't have the
+# `**` after the end of the previous line, this
+# unignore line just doesn't work for some reason.
+!game/sf2/custom/readme.txt
