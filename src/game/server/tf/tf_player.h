@@ -429,7 +429,8 @@ public:
 	void RemoveTeleportEffect( void );
 	bool HasTheFlag( ETFFlagType exceptionTypes[] = NULL, int nNumExceptions = 0 ) const;
 	virtual bool IsAllowedToPickUpFlag( void ) const;
-	virtual bool IsAllowedToSeeMetal( void ) const; // Does this constitute the label "hack"?
+	virtual bool IsAllowedToSeeMetal( void ) const;
+	virtual bool IsAllowedToRepairBuildings( void ) const;
 
 	// Death & Ragdolls.
 	virtual void CreateRagdollEntity( void );

@@ -515,6 +515,9 @@ enum ETFWeaponType
 	TF_WEAPON_GRENADE_JAR_GAS,
 	TF_WEAPON_FLAME_BALL,
 
+	// STupid Fortress weapons
+	SF_WEAPON_FAKE_WRENCH,
+
 
 	//
 	// ADD NEW WEAPONS HERE TO AVOID BREAKING DEMOS
@@ -1038,6 +1041,8 @@ enum
 	HINT_CANNOT_ATTACK_WHILE_FEIGN_ARMED,	// #Hint_Cannot_Attack_While_Feign_Armed
 
 	HINT_CANNOT_ARM_FEIGN_NOW,			// #Hint_Cannot_Arm_Feign_Now
+
+	HINT_OBJECT_NEEDS_REPAIR,			// #Hint_Object_Needs_Repair
 
 	//
 	// ADD NEW ITEMS HERE TO AVOID BREAKING DEMOS

@@ -14686,9 +14686,41 @@ bool CTFPlayer::IsHelpmeButtonPressed() const
 //-----------------------------------------------------------------------------
 bool CTFPlayer::IsAllowedToSeeMetal( void ) const
 {
+	// I'm an Engineer, of course I can.
+	if ( IsPlayerClass( TF_CLASS_ENGINEER ) )
+	{
+		return true;
+	}
+
 	int iShowMetalHudElement = 0;
 	CALL_ATTRIB_HOOK_INT( iShowMetalHudElement, sf2_show_metal_hud_element );
 	if ( iShowMetalHudElement )
+	{
+		return true;
+	}
+
+	int iCanRepairBuildings = 0;
+	CALL_ATTRIB_HOOK_INT( iCanRepairBuildings, sf2_set_can_repair_buildings );
+	if ( iCanRepairBuildings )
+	{
+		return true;
+	}
+
+	return false;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Determine whether player should be able to repair buildings
+//-----------------------------------------------------------------------------
+bool CTFPlayer::IsAllowedToRepairBuildings( void ) const
+{
+	// I'm not an Engineer, but I smacked my TV with a wrench once and it worked.
+
+	// Should this really be it's own function?
+	// I mean, I don't know, but it's cool :D
+	int iCanRepairBuildings = 0;
+	CALL_ATTRIB_HOOK_INT(iCanRepairBuildings, sf2_set_can_repair_buildings);
+	if (iCanRepairBuildings)
 	{
 		return true;
 	}

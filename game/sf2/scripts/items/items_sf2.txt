@@ -4,6 +4,76 @@
 {
 	"prefabs"
 	{
+		// Custom Prefabs
+		"weapon_fake_wrench"
+		{
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+			}
+			"enabled"	"1"
+			"baseitem"	"0"
+			"sf2_item"	"1"
+			"inspect_panel_dist" "45"
+			"base_item_name"	"Not Quite A Wrench"
+			"item_class"	"sf_weapon_fake_wrench"
+			"item_type_name"	"#TF_Weapon_Wrench"
+			"item_name"	"#SF_Weapon_Fake_Wrench"
+			"item_description"	"#SF_Weapon_Fake_Wrench_Desc"
+			"item_logname" "fake_wrench"
+			"item_slot"	"melee"
+			"item_quality"	"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"1"
+			"image_inventory"	"backpack/weapons/w_models/w_wrench"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"	"models/weapons/c_models/c_wrench/c_wrench.mdl"
+			"attach_to_hands"	"1"
+			"used_by_classes"
+			{
+				"soldier"	"1"
+				"pyro"		"1"
+			}
+			"static_attrs"
+			{
+				"weapon_stattrak_module_scale"			"0.756"
+				"min_viewmodel_offset"					"10 -2 -9"
+			}
+			"attributes"
+			{
+				"sf2 set can repair buildings"
+				{
+					"attribute_class"	"sf2_set_can_repair_buildings"
+					"value"				"50"
+				}
+				"sf2 info set can repair buildings"
+				{
+					"attribute_class"	"sf2_info_set_can_repair_buildings"
+					"value"				"1"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"0.5"
+				}
+				"kill eater score type"
+				{
+					"attribute_class"	"kill_eater_score_type"
+					"value" 	"3"									
+				}
+				"kill eater score type 2"
+				{
+					"attribute_class"	"kill_eater_score_type_2"
+					"value" 	"0"									
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
+			"particle_suffix"		"wrench"
+		}
+
 		// Overriding my shit
 		"weapon_winger_pistol"
 		{
@@ -51,6 +121,13 @@
 				}
 			}
 		}
+		"21001"
+		{
+			"name"				"Not Quite A Wrench"
+			"prefab"			"weapon_fake_wrench"
+			"sf2_item"			"1"
+		}
+
 		// Overriding my shit
 		"773" // Pretty Boy's Pocket Pistol
 		{
@@ -84,13 +161,33 @@
 			"effect_type"			"positive"
 			"stored_as_integer"		"0"
 		}
-		"5002" // See tf_hud_account.cpp (278) and tf_player_shared.cpp (14687)
+		"5002"	// See tf_hud_account.cpp (278) and tf_player_shared.cpp (14687)
 		{
 			"name"					"sf2 show metal hud element"
 			"attribute_class"		"sf2_show_metal_hud_element"
 			"description_string"	"unused"
 			"description_format"	"value_is_additive"
 			"hidden"				"1"
+			"effect_type"			"neutral"
+			"stored_as_integer"		"0"
+		}
+		"5003" // Currently only works on sf_weapon_fake_wrench type items
+		{
+			"name"					"sf2 set can repair buildings"
+			"attribute_class"		"sf2_set_can_repair_buildings"
+			"description_string"	"#Attrib_SetCanRepairBuildings"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
+			"effect_type"			"positive"
+			"stored_as_integer"		"0"
+		}
+		"5004" // Info for above, can't figure out how to make it display *after* the above though.
+		{
+			"name"					"sf2 info set can repair buildings"
+			"attribute_class"		"sf2_info_set_can_repair_buildings"
+			"description_string"	"#Attrib_InfoSetCanRepairBuildings"
+			"description_format"	"value_is_additive"
+			"hidden"				"0"
 			"effect_type"			"neutral"
 			"stored_as_integer"		"0"
 		}

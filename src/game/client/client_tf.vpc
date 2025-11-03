@@ -671,6 +671,8 @@ $Project "Client (SF2)"
 				$File	"$SRCDIR\game\shared\tf\tf_weapon_mechanical_arm.h"
 				$File	"$SRCDIR\game\shared\tf\tf_weapon_rocketpack.cpp"
 				$File	"$SRCDIR\game\shared\tf\tf_weapon_rocketpack.h"
+				$File	"$SRCDIR\game\shared\tf\sf_weapon_fake_wrench.cpp"
+				$File	"$SRCDIR\game\shared\tf\sf_weapon_fake_wrench.h"
 			}
 
 			$Folder	"Economy"

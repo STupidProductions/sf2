@@ -2941,6 +2941,7 @@ bool CBaseObject::CanBeUpgraded( CTFPlayer *pPlayer )
 //-----------------------------------------------------------------------------
 int CBaseObject::Command_Repair( CTFPlayer *pActivator, float flAmount, float flRepairMod, float flRepairToMetalRatio /*= 3.f*/, bool bSendEvent /*= false*/ )
 {
+	// TODO: This seems to suffer from an off-by-one error :(
 	if ( !CanBeRepaired() )
 		return false;
 	

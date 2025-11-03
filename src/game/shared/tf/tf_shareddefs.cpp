@@ -708,6 +708,7 @@ const char *g_aWeaponNames[] =
 	"TF_WEAPON_JAR_GAS",
 	"TF_WEAPON_GRENADE_JAR_GAS",
 	"TF_WEPON_FLAME_BALL",
+	"SF_WEAPON_FAKE_WRENCH",
 
 };
 COMPILE_TIME_ASSERT( ARRAYSIZE( g_aWeaponNames ) == TF_WEAPON_COUNT );
@@ -824,6 +825,7 @@ int g_aWeaponDamageTypes[] =
 	DMG_GENERIC, // TF_WEAPON_JAR_GAS
 	DMG_GENERIC, // TF_WEAPON_GRENADE_JAR_GAS
 	DMG_GENERIC | DMG_PREVENT_PHYSICS_FORCE, // TF_WEAPON_FLAME_BALL
+	DMG_CLUB, // SF_WEAPON_FAKE_WRENCH
 
 };
 
@@ -1135,6 +1137,8 @@ const char *g_pszHintMessages[] =
 	"#Hint_Cannot_Attack_While_Cloaked",
 
 	"#Hint_Cannot_Arm_Feign_Now",
+
+	"#Hint_Object_Needs_Repair",
 };
 
 const char *g_pszArrowModels[] = 

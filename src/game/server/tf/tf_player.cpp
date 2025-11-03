@@ -15974,6 +15974,7 @@ void CTFPlayer::OnMyWeaponFired( CBaseCombatWeapon *weapon )
 		case TF_WEAPON_PUMPKIN_BOMB:
 		case TF_WEAPON_WRENCH:			// skip this so engineer building doesn't mark 'in combat'
 		case TF_WEAPON_PDA_SPY_BUILD:
+		case SF_WEAPON_FAKE_WRENCH:
 			// not a 'combat' weapon
 			return;
 		};

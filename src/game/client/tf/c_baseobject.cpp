@@ -839,6 +839,17 @@ void C_BaseObject::DisplayHintTo( C_BasePlayer *pPlayer )
 				bHintPlayed = pPlayer->HintMessage( HINT_ENGINEER_REPAIR_OBJECT, false, true );
 			}
 		}
+
+		if ( pTFPlayer->IsAllowedToRepairBuildings() )
+		{
+			// I'm *not* an engineer, but...
+
+			// I can smack shit and "fix" it.
+			if ( !bHintPlayed && !IsBuilding() && GetHealth() < GetMaxHealth() )
+			{
+				bHintPlayed = pPlayer->HintMessage( HINT_OBJECT_NEEDS_REPAIR, false, true );
+			}
+		}
 	}
 }
 
